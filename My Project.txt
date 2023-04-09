@@ -1,0 +1,398 @@
+
+#include<fstream.h>
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+#include<stdlib.h>
+class natural_resources
+{ char e[11],time[9],user_id[6],name[20],from[15],to[15],car[10],date[11],update,ans;
+
+  public:
+  natural_resources()
+  {  strcpy(name,"NOT ENTERED");
+	  strcpy(user_id,"XXXXX");
+	  strcpy(from,"NOT DEFINED");
+	  strcpy(to,"NOT DEFINED");
+	  strcpy(e,"0000000000");
+	  strcpy(car,"DONT HAVE");
+	  strcpy(date,"00-00-0000");
+	  strcpy(time,"00:00");
+	  ans='N';
+	  update='N';
+  }
+
+ void login()
+ {	 X:cout<<endl<<endl;
+	 cout<<"\n\t\tENTER YOUR USER ID : ";
+	 cin>>user_id;
+	 if((strcmp(user_id,"To56m")==0)||(strcmpi(user_id,"har1R")==0)||(strcmp(user_id,"Ma6vo")==0)||(strcmp(user_id,"d92lE")==0)||(strcmpi(user_id,"P12ot")==0))
+		{ cout<<"\n\n\n\t\tUSER ID ACCEPTED";
+		  cout<<"\n\n\t\tNOW YOU CAN PROCEED";
+		  cout<<"\n\n\t\tPLEASE PRESS ENTER";
+		  getch();
+		  cout<<"\n\n\n\n\t\tPREPARING YOUR ACCOUNT........";
+		  getch();
+		  clrscr();
+		  cout<<"\n\n";
+		  cout<<"\t\tENTER YOUR NAME : ";
+		  gets(name);
+		  cout<<"\n\n";
+		  cout<<"\t\tSTART POINT OF YOUR TRIP(FROM) : ";
+		  gets(from);
+		  cout<<"\n\n";
+		  cout<<"\t\tDESTINY OF YOUR TRIP(TO) : ";
+		  gets(to);
+		  cout<<"\n\n";
+		  cout<<"\t\tPLEASE ENTER YOUR PHONE NUMBER : ";
+		  cin>>e;
+		  cout<<"\n\n";
+		  cout<<"\t\tPLEASE ENTER YOUR CAR NAME : ";
+		  gets(car);
+		  cout<<"\n\n";
+		  cout<<"\t\tENTER THE DATE OF YOUR TRAVEL : ";
+		  gets(date);
+		  cout<<"\n\n\t\tENTER THE TIME OF YOUR TRAVEL : ";
+		  gets(time);
+		  cout<<"\t\t";
+		  getch();
+		  clrscr();
+		  cout<<"\n\n\n\n\n\n\n\n\t\tTHANK YOU FOR UPDATING YOUR TRAVEL INFORMATION\n";
+		  cout<<"\n\n\n\t\tI HOPE YOU WOULD HAVE A BETTER JOURNEY.";
+		  getch();
+		  clrscr();
+		}
+	 else
+		 { clrscr();
+			cout<<"\n\n\n\n\n\n\n\n\t\tWRONG PASSWORD";
+			cout<<"\n\n\t\tYOU WANT TO TRY AGAIN(Y/N) : ";
+			cin>>ans;
+			 if(ans=='y'||ans=='Y')
+				{clrscr();goto X;}
+			 else
+				{clrscr();}
+		 }
+ }
+
+
+ void create_account()
+ {
+	 clrscr();
+	 cout<<"\n\n\n\n\n\t\tENTER YOUR NAME: ";
+	 gets(name);
+	 cout<<"\n\n";
+	 cout<<"\t\tFROM NOW YOUR USER ID IS: ";
+	 give_id();
+	 cout<<"\n\n\n\n\t\tPLEASE PRESS ENTER";
+	 getch();
+	 clrscr();
+	 cout<<"\n\n\n\n\n\n\n\tTHANK YOU FOR CREATING AN ACCOUNT IN OUR SITE.\n";
+	 cout<<"\n\tFROM THIS DAY YOU HAVE TAKEN ONE STEP FORWARD TO SAVE OUR PLANET\n";
+	 cout<<"\n\tWE APPRECIATE FOR YOUR ATTENTION INTO THE MATTER\n";
+	 cout<<"\n\tHAVE A GOOD DAY.";
+	 getch();
+	 clrscr();
+	 cout<<"\n\n\n\n\n\n\t\tWOULD YOU LIKE TO UPDATE YOUR TRAVEL INFO(Y/N) : ";
+	 cin>>update;
+	 clrscr();
+	 if ((update=='Y')||(update=='y'))
+		 {login2();}
+	 else
+		 {cout<<"\n\n\n\n\n\n\n\n\n\t\t\tTHANK YOU HAVE A NICE DAY";getch();clrscr();}
+ }
+
+ void give_id()
+ {  int b,x=4,y=1;
+	  {  randomize();
+		  b=random(x-y+1)+y;
+		  switch(b)
+		  { case 1: cout<<"Ma6vo";
+						break;
+			 case 2: cout<<"To56m";
+						break;
+			 case 3: cout<<"d92lE";
+						break;
+			 case 4: cout<<"har1R";
+						break;
+			 case 5: cout<<"P12ot";
+						break;
+		  }
+	  }
+ }
+
+ void showdata()
+ {
+	  cout<<"\n";
+	  cout<<"\t\tNAME OF THE TRAVELER    : "<<name<<endl;
+	  cout<<"\t\tTRAVELER IS GOING ON    : "<<date<<endl;
+	  cout<<"\t\tTIME OF THE JOURNEY     : "<<time<<endl;
+	  cout<<"\t\tTRAVELER IS GOING FROM  : "<<from<<endl;
+	  cout<<"\t\tTRAVELER IS GOING TO    : "<<to<<endl;
+	  cout<<"\t\tTRAVELER'S PHONE NUMBER : "<<e<<endl;
+	  cout<<"\t\tTRAVELER'S CAR NAME IS  : "<<car<<endl;
+	  cout<<"\n\n\n\t\t";
+ }
+
+
+ void passenger()
+ {
+	  char k,word1[10],word2[10],word;int found=0;
+	  Y:cout<<endl<<endl<<endl;
+	  cout<<"\n\n\t\tYOU WANT TO :";
+	  cout<<"\n\n\t\t1.SEARCH THE TRIP INFO";
+	  cout<<"\n\n\t\t2.DISPLAY ALL INFORMATION ABOUT TRIPS";
+	  cout<<"\n\n\n\t\tYOUR CHOICE IS : ";
+	  cin>>k;
+	  clrscr();
+	  if(k=='1')
+		 {cout<<"\n\n\n\t\tPLEASE ENTER THE DATE OF YOUR TRAVEL : ";
+		  gets(word1);
+		  cout<<"\n\n\n\t\tPLEASE ENTER THE TIME OF YOUR TRAVEL : ";
+		  gets(word2);
+		  clrscr();
+		  cout<<"\n\n\n\t\t";
+		  natural_resources obj;
+		  ifstream zyx("login.dat",ios::binary,ios::app);
+		  while(zyx.read((char*)&obj,sizeof(obj)))
+			  {if(strcmp(word1,obj.date)==0 && strcmp(word2,obj.time)==0)
+					 {cout<<"TRAVELERS TRAVELING ON YOUR GIVEN DATE &TIME ARE :\n\n";
+					  obj.showdata();found++;}
+			  }if (found==0)
+					cout<<"\n\n\n\n\tSORRY THERE IS NO TRAVELER TRAVELING ON THIS DATE AND TIME.";
+			  zyx.close();
+		 }
+	  else if(k=='2')
+		 {	natural_resources obj;
+			ifstream zyx("login.dat",ios::binary,ios::app);
+			while(zyx.read((char*)&obj,sizeof(obj)))
+				 {obj.showdata();found++;}
+				  if(found=0)
+				  cout<<"\n\n\n\n\t\tSORRY THERE IS NO TRAVELER TRAVELING.";
+				  zyx.close();
+		 }
+	  else
+		 {  cout<<"\n\n\n\n\n\n\n\t\tWRONG ENTRY YOU CAN ONLY PRESS 1 OR 2\n"<<endl;
+			 cout<<"\t\tPLEASE PRESS ENTER AND THEN DAIL 1 OR 2";
+			 getch();
+			 clrscr();
+			 goto Y;
+		 }
+	getch();
+	clrscr();
+	cout<<"\n\n\n\n\n\t\tTHANK YOU\n\n\n\t\tI HOPE YOU WOULD HAVE A BETTER JOURNEY.";
+	getch();
+	clrscr();
+ }
+
+
+
+ void login2()
+ {   natural_resources obj;
+	  ofstream xyz("login.dat",ios::binary|ios::app);
+	  obj.login();
+	  xyz.write((char*)&obj,sizeof(obj));
+	 // xyz.close();
+ }
+
+
+
+ void modify()
+ {  clrscr();
+	 char phoneno[11];
+	 cout<<"\n\n\n\t\tENTER YOUR PHONE NUMBER : ";
+	 cin>>phoneno;
+	 fstream klm("login.dat",ios::binary|ios::in|ios::out);
+	 natural_resources obj;
+	 int found =0;
+	 while(klm.read((char*)&obj,sizeof(obj)))
+	 {if(strcmpi(phoneno,obj.e)==0)
+		 {cout<<"\n\n\n\t\tYOU ARE CURRENTLY MODIFYING THIS DATA :"<<endl<<endl;
+		  obj.showdata();getch();clrscr();
+		  obj.login();
+		  int s=sizeof(obj);
+		  klm.seekp(-s,ios::cur);
+		  klm.write((char*)&obj,sizeof(obj));
+		  cout<<"\n\n\n\t\tYOU HAVE MODIFIED YOUR DATA TO :"<<endl<<endl;
+		  obj.showdata();getch();clrscr();
+		  found++;break;
+		 }
+	 }klm.close();
+	if(found==0)
+	cout<<"\n\n\n\t\tRECORD IS NOT PRESENT IN THE FILE!!!";
+	getch();clrscr();
+ }
+
+
+
+ void Delete()
+ {
+	 char answer;
+	 clrscr();
+	 char phoneno[11];
+	 cout<<"\n\n\n\t\tENTER THE PHONE NUMBER : ";
+	 cin>>phoneno;
+	 cout<<"\n\n\t\tARE YOU SURE YOU WANT TO DELETE YOUR DATA ?(Y/N) ";
+	 cin>>answer;
+	 if(answer=='y'||answer=='Y')
+		{ifstream mno("login.dat",ios::binary);
+		 ofstream nop("temp.dat",ios::binary);
+		 natural_resources obj;
+		 while(mno.read((char*)&obj,sizeof(obj)))
+			  {if(strcmpi(phoneno,obj.e)==0)
+				  {cout<<"\n\n\n\t\tTHIS DATA HAS BEEN DELETED :"<<endl;
+					obj.showdata();
+					cout<<"\n\t\tPLEASE PRESS ENTER";
+					getch();}
+				else if(strcmpi(phoneno,obj.e)!=0)
+				  {nop.write((char*)&obj,sizeof(obj));}
+			  }
+		 mno.close();nop.close();
+		 remove("login.dat");
+		 rename("temp.dat","login.dat");
+		}clrscr();
+ }
+};
+
+
+void main_info()
+ {   cout<<"\n\n\n";
+	  ifstream abc;
+	  abc.open("natural.txt");
+	  char ch;
+	  while(!abc.eof())
+	  {  abc.get(ch);
+		  cout<<ch;
+	  }abc.close();getch();clrscr();
+	  cout<<"\n\n\n     IN TODAY'S WORLD OUR NATURAL RESOURCES ARE DEPLETING\n"<<endl;
+	  cout<<"     SO IT IS OUR RESPONSIBILITY TO THINK ABOUT IT"<<endl;
+	  cout<<"     AND TO PROTECT IT FROM GETTING DEPLETED\n"<<endl;
+	  cout<<"     PEOPLE USUALLY TRAVEL ALONE IN A CAR"<<endl;
+	  cout<<"     A FAMILY OF 4 MEMBERS HAVE 4 CARS FOR EACH MEMBER,"<<endl;
+	  cout<<"     THEY TRAVEL ALONE IN THEIR ENTIRE ROOT WITHOUT HELPING OTHERS\n"<<endl;
+	  cout<<"     SO LET US ALL TAKE 1 STEP FORWARD TO PROTECT OUR NATURAL RESOURCES"<<endl;
+	  cout<<"     AND LOGIN INTO THIS SITE\n"<<endl;
+	  cout<<"     THIS WILL NOT ONLY SAVE OUR NATURAL RESOURCE\n"<<endl;
+	  cout<<"     BUT ALSO HELP THOSE PEOPLE WHO WANT TO TRAVEL FROM ONE PLACE TO ANOTHER"<<endl;
+	  cout<<"     AND WILL ALSO LEAD US TO BECOME A GOOD CITIZEN";
+	  getch();
+	  clrscr();
+ }
+
+
+
+ void create_account2()
+ {
+	  natural_resources obj;
+	  ofstream jkl("namein.dat",ios::binary|ios::app);
+	  obj.create_account();
+	  jkl.write((char*)&obj,sizeof(obj));
+	  jkl.close();
+ }
+
+
+
+void main()
+{
+	  natural_resources P;  char ch; int f,a,d;
+	  main_info();
+	  ifstream bcd("load.txt");
+	  while(!bcd.eof())
+	  {  bcd.get(ch);cout<<ch;}bcd.close();getch();clrscr();
+		  ifstream efg("welcome.txt");
+		  while(!efg.eof())
+			 { efg.get(ch);cout<<ch;}
+	  Q:cout<<endl<<endl<<endl;
+	  cout<<"\t\t\t\t   MAIN MENU\n";
+	  cout<<"\t\t\t\t---x---x---x---\n\n\n";
+	  cout<<"\t\t1.YOU WANT TO RUN THIS PROGRAM\n";
+	  cout<<"\t\t2.DEVELOPER'S INFORMATION.\n";
+	  cout<<"\t\t3.YOU WANT TO EXIT\n\n";
+	  cout<<"\n\n\t\tYOUR CHOICE IS :";
+	  cin>>f;
+	  clrscr();
+	  switch(f)
+	  {case 1 : M:cout<<"\n\n\n\n\t\tARE YOU A TRAVELER OR A PASSENGER.\n\n"<<endl;
+					cout<<"\t\tPRESS:\n\t\t1 FOR A TRAVELLER\n\t\t2 FOR A PASSENGER\n\n"<<endl;
+					cout<<"\t\tYOUR CHOICE IS : ";
+					cin>>a;
+					clrscr();
+					switch(a)
+					{case 1 : {  ifstream fgh("traveler.txt");
+									 while(!fgh.eof())
+									  { fgh.get(ch);cout<<ch;}
+									 N:cout<<"\n\n\n\n\n\t\tDO YOU WANT TO LOGIN OR CREATE AN ACCOUNT\n\n"<<endl;
+									 cout<<"\t\tPRESS 1 TO LOGIN"<<endl;
+									 cout<<"\t\tPRESS 2 TO CREATE AN ACCOUNT"<<endl;
+									 cout<<"\t\tPRESS 3 TO MODIFY"<<endl;
+									 cout<<"\t\tPRESS 4 TO DELETE\n\n"<<endl;
+									 cout<<"\t\tYOUR CHOICE IS : ";
+									 cin>>d;
+									  if(d==1)
+										{  clrscr();
+											P.login2();
+										}
+									  else if(d==2)
+										{create_account2();
+										}
+									  else if(d==3)
+										{P.modify();
+										}
+									  else if(d==4)
+										{P.Delete();
+										}
+									  else
+										{clrscr();
+										 cout<<"\n\n\n\n\n\n\n\t\tWRONG ENTRY YOU CAN ONLY PRESS 1 , 2 , 3 OR 4\n\n"<<endl;
+										 cout<<"\t\tPLEASE PRESS ENTER THEN CHOOSE 1 OR 2 OR 3 OR 4";
+										 getch();
+										 clrscr();
+										 goto N;
+										}
+								 }
+								 break;
+
+					 case 2 : {  ifstream ghi("passen.txt");
+									 while(!ghi.eof())
+									  {ghi.get(ch);cout<<ch;}
+									 P.passenger();
+								 }
+								 break;
+
+					 default :{  cout<<"\n\n\n\n\n\n\n\t\tWRONG ENTRY YOU CAN ONLY PRESS 1 OR 2,\n"<<endl;
+									 cout<<"\t\tPLEASE PRESS ENTER AND THEN DAIL 1 OR 2";
+									 getch();
+									 clrscr();
+									 goto M;
+								 }
+					}
+
+		case 2 :	{ifstream cde("develop.txt");
+					while(!cde.eof())
+					 {cde.get(ch);cout<<ch;}cde.close();getch();clrscr();
+					  cout<<"\n\n\n\n\n\tTHIS PROGRAM IS MADE BY PUNEET YADAV OF CLASS XII-D\n\n"<<endl;
+					  cout<<"\n\tTHE MAIN AIM BEHIND THIS PROGRAM WAS TO SPREAD AWARENESS ABOUT "<<endl;
+					  cout<<"\tTHE DEPLETION OF OUR NATURAL RESOURCES.\n\n"<<endl;
+					  cout<<"\tPLEASE PRESS ENTER TO GO BACK TO MAIN MENU.";
+					  getch();
+					  clrscr();
+					  goto Q;
+					 }
+					  break;
+
+		case 3 : {cout<<"\n\n\n\n\n\n\n";
+					 ifstream def("exiting.txt");
+					 while(!def.eof())
+					  {def.get(ch);cout<<ch;}def.close();
+					 cout<<"\n\n\n\n\n\n\n\n\n\n\t\t\t\tTHANK YOU......";
+					 getch();
+					 clrscr();
+					}
+					 break;
+
+		default : {cout<<"\n\n\n\n\n\n\n\t\tWRONG ENTRY YOU CAN ONLY PRESS 1, 2 OR 3,\n"<<endl;
+					  cout<<"\t\tPLEASE PRESS ENTER AND THEN DAIL 1, 2 OR 3";
+					  getch();
+					  clrscr();
+					  goto Q;
+					 }
+	  }
+}
